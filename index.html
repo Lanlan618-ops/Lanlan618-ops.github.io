@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>向胜蓝 · Vibe Coding Projects</title>
+<style>
+  :root { --blue:#0070C0; --navy:#14213D; --ink:#1a1a1a; --muted:#666; --line:#e6e8ec; --bg:#f4f6f9; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--ink); }
+  .wrap { max-width:1180px; margin:0 auto; padding:56px 24px 72px; }
+  .eyebrow { font-size:12px; letter-spacing:2.5px; color:var(--blue); font-weight:600; }
+  h1 { font-size:40px; line-height:1.2; margin:12px 0 14px; letter-spacing:-0.5px; color:var(--navy); }
+  .intro { max-width:720px; font-size:15px; line-height:1.8; color:var(--muted); margin:0 0 34px; }
+  h2 { font-size:15px; letter-spacing:1px; color:var(--navy); margin:38px 0 16px; padding-bottom:10px; border-bottom:1px solid var(--line); }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .card { display:block; background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; box-shadow:0 8px 24px rgba(20,33,61,.05); transition:transform .2s ease, box-shadow .2s ease; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 14px 34px rgba(20,33,61,.10); }
+  .thumb { aspect-ratio:16/10; background:#e9edf2; overflow:hidden; }
+  .thumb img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+  .card:hover .thumb img { transform:scale(1.025); }
+  .body { padding:16px 18px 18px; }
+  .title { font-size:16px; font-weight:600; color:var(--navy); margin:0 0 6px; }
+  .desc { font-size:13px; line-height:1.65; color:var(--muted); margin:0 0 12px; min-height:42px; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-size:11px; color:var(--blue); background:#eef6fc; border-radius:999px; padding:4px 9px; }
+  .tag.warn { color:#9a6700; background:#fff7e0; }
+  .foot { margin-top:34px; font-size:12px; line-height:1.8; color:#8a8f98; }
+  .foot a { color:var(--blue); text-decoration:none; }
+  @media (max-width:900px) { .grid { grid-template-columns:repeat(2,1fr); } h1 { font-size:32px; } }
+  @media (max-width:600px) { .wrap { padding:34px 16px 50px; } .grid { grid-template-columns:1fr; } h1 { font-size:28px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">VIBE CODING · 2026</div>
+  <h1>把想法做成<br>能跑的东西。</h1>
+  <p class="intro">这里是向胜蓝用 ZCode 做的几个项目：一个课堂 AI 助手、一个校园拼单商城、一个《孙子兵法》推演游戏，以及一组 MediaPipe / AR / 3D / 全息视觉实验。大部分可以直接在线体验；需要后端的项目在页面里注明了运行方式。</p>
+
+  <h2>产品与交互</h2>
+  <div class="grid">
+    <a class="card" href="/vibe-projects/lecture-copilot/">
+      <div class="thumb"><img src="/vibe-projects/assets/lecture.jpg" alt="课堂助手界面"></div>
+      <div class="body">
+        <div class="title">课堂助手 · Lecture Copilot</div>
+        <div class="desc">左边翻课件，右边实时英文转写 + 中文翻译，一键解析本页。面向全英授课场景。</div>
+        <div class="tags"><span class="tag">AI 应用</span><span class="tag">Python</span><span class="tag warn">需本地后端</span></div>
+      </div>
+    </a>
+    <a class="card" href="/vibe-projects/cookie-shop/">
+      <div class="thumb"><img src="/vibe-projects/assets/cookie.jpg" alt="校园饼干拼单商城"></div>
+      <div class="body">
+        <div class="title">小饼铺 · 校园拼单商城</div>
+        <div class="desc">港中深校园饼干拼单：扫码下单、收款码确认、商家后台维护商品和订单。</div>
+        <div class="tags"><span class="tag">uni-app</span><span class="tag">Vue 3</span><span class="tag">本地演示数据</span></div>
+      </div>
+    </a>
+    <a class="card" href="/vibe-projects/mousuan/">
+      <div class="thumb"><img src="/vibe-projects/assets/mousuan.jpg" alt="庙算孙子兵法推演"></div>
+      <div class="body">
+        <div class="title">庙算 · 孙子兵法推演</div>
+        <div class="desc">在情报不全、资源有限、代价真实的局面里做取舍，战后复盘把决策讲清楚。</div>
+        <div class="tags"><span class="tag">原生前端</span><span class="tag">交互叙事</span><span class="tag">可直接体验</span></div>
+      </div>
+    </a>
+  </div>
+
+  <h2>MediaPipe / AR / 3D / 全息视觉实验</h2>
+  <div class="grid">
+    <a class="card" href="/gesture-face/">
+      <div class="thumb"><img src="/vibe-projects/assets/gesture.jpg" alt="手势表情实验"></div>
+      <div class="body">
+        <div class="title">Face / Signal · 手势表情</div>
+        <div class="desc">MediaPipe Hands 读取手掌开合：捏合变严肃，张开变微笑，连续控制 50 帧表情。</div>
+        <div class="tags"><span class="tag">MediaPipe</span><span class="tag">手势交互</span></div>
+      </div>
+    </a>
+    <a class="card" href="/mediapipe/">
+      <div class="thumb"><img src="/vibe-projects/assets/mediapipe.jpg" alt="MediaPipe 视觉实验"></div>
+      <div class="body">
+        <div class="title">MediaPipe 1.0 · 四组视觉实验</div>
+        <div class="desc">全息人像、旋转花束、掌心立方体与粒子聚合；左手托起，右手切换形态。</div>
+        <div class="tags"><span class="tag">Three.js</span><span class="tag">全息 / 粒子</span></div>
+      </div>
+    </a>
+    <a class="card" href="/rapeseed-vase/">
+      <div class="thumb"><img src="/vibe-projects/assets/rapeseed.jpg" alt="油菜花玻璃花瓶 3D"></div>
+      <div class="body">
+        <div class="title">Rapeseed in Glass · 3D 资产</div>
+        <div class="desc">按参考照片重建的高精度油菜花玻璃花瓶，PBR 材质，支持线框与 GLB 下载。</div>
+        <div class="tags"><span class="tag">3D / PBR</span><span class="tag">实时预览</span></div>
+      </div>
+    </a>
+    <a class="card" href="/rose-bouquet/">
+      <div class="thumb"><img src="/vibe-projects/assets/rose.jpg" alt="玫瑰花束 3D"></div>
+      <div class="body">
+        <div class="title">Roses in Kraft · 3D 资产</div>
+        <div class="desc">深红玫瑰、牛皮纸包裹、黑色缎带；实时旋转、线框与 GLB 下载。</div>
+        <div class="tags"><span class="tag">3D / PBR</span><span class="tag">实时预览</span></div>
+      </div>
+    </a>
+    <a class="card" href="/vibe-projects/ai-site-demo/">
+      <div class="thumb"><img src="/vibe-projects/assets/aisite.jpg" alt="NOVA Energy 3D 网站"></div>
+      <div class="body">
+        <div class="title">NOVA ENERGY · 3D 网站</div>
+        <div class="desc">滚动叙事 + 3D 交互动效的品牌网站 demo，四段产品波形随滚动切换。</div>
+        <div class="tags"><span class="tag">Three.js</span><span class="tag">动效</span></div>
+      </div>
+    </a>
+  </div>
+
+  <div class="foot">
+    部分页面需要摄像头或 WebGL，建议用 Chrome / Safari 打开。<br>
+    需要后端的项目：课堂助手（Python + API Key）、饼干商城（真实订单需 Node/SQLite）。
+  </div>
+</div>
+</body>
+</html>
