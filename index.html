@@ -14,6 +14,7 @@
   .intro { max-width:720px; font-size:15px; line-height:1.8; color:var(--muted); margin:0 0 34px; }
   h2 { font-size:15px; letter-spacing:1px; color:var(--navy); margin:38px 0 16px; padding-bottom:10px; border-bottom:1px solid var(--line); }
   .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .grid.visual-grid { grid-template-columns:repeat(2,1fr); }
   .card { display:block; background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit; box-shadow:0 8px 24px rgba(20,33,61,.05); transition:transform .2s ease, box-shadow .2s ease; }
   .card:hover { transform:translateY(-3px); box-shadow:0 14px 34px rgba(20,33,61,.10); }
   .thumb { aspect-ratio:16/10; background:#e9edf2; overflow:hidden; }
@@ -28,7 +29,7 @@
   .foot { margin-top:34px; font-size:12px; line-height:1.8; color:#8a8f98; }
   .foot a { color:var(--blue); text-decoration:none; }
   @media (max-width:900px) { .grid { grid-template-columns:repeat(2,1fr); } h1 { font-size:32px; } }
-  @media (max-width:600px) { .wrap { padding:34px 16px 50px; } .grid { grid-template-columns:1fr; } h1 { font-size:28px; } }
+  @media (max-width:600px) { .wrap { padding:34px 16px 50px; } .grid, .grid.visual-grid { grid-template-columns:1fr; } h1 { font-size:28px; } }
 </style>
 </head>
 <body>
@@ -66,15 +67,7 @@
   </div>
 
   <h2 id="visual">MediaPipe / AR / 3D / 全息视觉实验</h2>
-  <div class="grid">
-    <a class="card" href="/gesture-face/">
-      <div class="thumb"><img src="/vibe-projects/assets/gesture.jpg" alt="手势表情实验"></div>
-      <div class="body">
-        <div class="title">Face / Signal · 手势表情</div>
-        <div class="desc">MediaPipe Hands 读取手掌开合：捏合变严肃，张开变微笑，连续控制 50 帧表情。</div>
-        <div class="tags"><span class="tag">MediaPipe</span><span class="tag">手势交互</span></div>
-      </div>
-    </a>
+  <div class="grid visual-grid">
     <a class="card" href="/mediapipe/">
       <div class="thumb"><img src="/vibe-projects/assets/mediapipe.jpg" alt="MediaPipe 视觉实验"></div>
       <div class="body">
